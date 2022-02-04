@@ -1,0 +1,117 @@
+.modal {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.5;
+  max-width: 50%;
+  padding: 1rem 2rem;
+}
+.modal a {
+  color: #bf0222;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .modal {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .warning {
+    display: none;
+  }
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8&w=1000&q=80");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.start {
+  position: relative;
+  top: 2cm;
+  left: 5cm;
+}
+
+.grid-anim {
+  padding: 0 30px;
+  display: grid;
+  gap: 15px;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "de mn ma me";
+}
+
+.box {
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  max-width: 500px;
+  text-align: justify;
+  transition: transform 0.2s; /* Animation */
+
+  /* width: 30rem; */
+  /* height: 20rem; */
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(30px);
+  margin: -20px;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+.box p {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: rgb(250, 241, 241);
+}
+
+.para {
+  max-width: 40cm;
+  position: relative;
+  top: 3cm;
+  left: 20px;
+}
+
+.para p {
+  font-size: 20px;
+  color: gray;
+}
